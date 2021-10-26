@@ -1,0 +1,43 @@
+package Browser_Handling;
+
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+
+public class Multiple_Browser_Handling {
+
+	public static void main(String[] args) {
+		
+		/*
+		 *  Example of Multiple Browser Handling
+		 */
+		
+		System.setProperty("webdriver.chrome.driver",  "C:\\Users\\HP\\OneDrive\\Desktop\\Java\\Drvier\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		driver.get("https://www.dezlearn.com");
+		
+		Actions action = new Actions(driver);
+		
+		WebElement testpage =  driver.findElement(By.cssSelector("li#menu-item-9634>a"));
+		
+		action.moveToElement(testpage).click();
+		
+		driver.findElement(By.cssSelector("li#menu-item-9389>a")).click();
+		
+//		driver.close();
+//		driver.quit();
+
+	}
+
+}

@@ -1,0 +1,10 @@
+package Mouse_Actions;
+
+public class Mouse_Home {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,35 @@
+package Mouse_Actions;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Mouse_Home {
+
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.chrome.driver",  "C:\\Users\\HP\\OneDrive\\Desktop\\Java\\Drvier\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		
+		driver.get("http://automationteststore.com/");
+		
+		Actions action = new Actions(driver);
+		
+		WebElement makeup = driver.findElement(By.linkText("Makeup"));
+		
+		action.moveToElement(makeup).perform();
+		
+//		WebElement makeup = driver.findElement(By.linkText("Lips"))
+
+	}
+
+}
