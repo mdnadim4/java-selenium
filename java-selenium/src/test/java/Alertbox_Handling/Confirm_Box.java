@@ -15,7 +15,7 @@ public class Confirm_Box {
 		 *  Example of Confirm Alert Box
 		 */
 		
-		System.setProperty("webdriver.chrome.driver",  "C:\\Users\\HP\\OneDrive\\Desktop\\Java\\Drvier\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver",  "C:\\Users\\Reza\\Desktop\\java-selenium\\Drvier\\chromedriver.exe");
 		
 		WebDriver driver = new ChromeDriver();
 		
@@ -31,7 +31,7 @@ public class Confirm_Box {
 		
 		System.out.println(a.getText());
 	  	
-		a.dismiss();;
+		a.dismiss();
 
 		driver.close();
 

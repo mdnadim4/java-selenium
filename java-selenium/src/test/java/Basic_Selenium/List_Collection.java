@@ -9,8 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class List_Collection {
 
-	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\HP\\OneDrive\\Desktop\\Java\\Drvier\\chromedriver.exe");
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Reza\\Desktop\\java-selenium\\Drvier\\chromedriver.exe");
 		
 		WebDriver driver = new ChromeDriver();
 		
@@ -21,9 +21,9 @@ public class List_Collection {
 		driver.get("https://www.walmart.com/");
 		driver.findElement(By.id("global-search-input")).sendKeys("Men Shoes");
 		driver.findElement(By.id("global-search-submit")).click();
-		driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		
-		driver.close();
+		driver.quit();
 	}
 
 }

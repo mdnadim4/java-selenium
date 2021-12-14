@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Find_Element {
 
 	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\HP\\OneDrive\\Desktop\\Java\\Drvier\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Reza\\Desktop\\java-selenium\\Drvier\\chromedriver.exe");
 		
 		WebDriver driver = new ChromeDriver();
 		
@@ -45,19 +45,21 @@ public class Find_Element {
 		 *  Using Partial Link Text
 		 *  Getting Text from web Element
 		 */
+
+		driver.manage().window().maximize();
 		
 		driver.get("https://www.amazon.com");
 		
 		driver.findElement(By.name("field-keywords")).sendKeys("Barbie Dolls");
 		
 		driver.findElement(By.id("nav-search-submit-button")).click();
-		driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		
-		Thread.sleep(1000);
+		// Thread.sleep(1000);
 		
 		driver.findElement(By.partialLinkText("Women Doll")).click();
 		
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		
 		String productTitle = driver.findElement(By.id("productTitle")).getText();
 		
@@ -66,7 +68,7 @@ public class Find_Element {
 		System.out.println("Product title is: " + productTitle);
 		System.out.println("Product Price is: " + productPrice);
 		
-		driver.close();
+		driver.quit();
 	}
 
 }

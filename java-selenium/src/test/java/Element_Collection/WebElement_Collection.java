@@ -12,7 +12,7 @@ public class WebElement_Collection {
 
 	public static void main(String[] args) throws Exception {
 
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\HP\\OneDrive\\Desktop\\Java\\Drvier\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Reza\\Desktop\\java-selenium\\Drvier\\chromedriver.exe");
 
 		WebDriver driver = new ChromeDriver();
 
@@ -26,7 +26,7 @@ public class WebElement_Collection {
 
 		driver.get("https://www.actitime.com/");
 		
-		List<WebElement> links =  driver.findElements(By.xpath("//ul[@class=\"header__menu\"]/li"));
+		List<WebElement> links =  driver.findElements(By.xpath("//ul[@class='header__menu']/li"));
 		
 		for(WebElement link : links) {
 			String link_text = link.getText();

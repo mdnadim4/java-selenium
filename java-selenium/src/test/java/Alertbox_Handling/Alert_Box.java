@@ -15,7 +15,7 @@ public class Alert_Box {
 		 *  Example of Simple Alert Box
 		 */
 		
-		System.setProperty("webdriver.chrome.driver",  "C:\\Users\\HP\\OneDrive\\Desktop\\Java\\Drvier\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver",  "C:\\Users\\Reza\\Desktop\\java-selenium\\Drvier\\chromedriver.exe");
 		
 		WebDriver driver = new ChromeDriver();
 		

@@ -1,0 +1,61 @@
+package TestNG;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class Full_Search {
+	
+	@Test
+	public void search_functionality_test() throws Exception {
+		
+		System.setProperty("webdriver.chrome.driver",  "C:\\Users\\Reza\\Desktop\\java-selenium\\Drvier\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		driver.get("https://www.ebay.com/");
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("gh-ac")).sendKeys("macbook");
+		
+		WebElement dropdown = driver.findElement(By.id("gh-cat"));
+		
+		Select menu = new Select(dropdown);
+		
+		menu.selectByVisibleText("Computers/Tablets & Networking");
+		
+		System.out.println(menu.getFirstSelectedOption().getText());
+		
+		driver.findElement(By.id("gh-btn")).click();
+		Thread.sleep(2000);
+	
+		driver.findElement(By.id("gh-btn")).click();
+		
+		String newUrl = driver.getCurrentUrl();
+		String newTitle = driver.getTitle();
+		
+		System.out.println("Page url is - " + newUrl);
+		System.out.println("Page title is - " + newTitle);
+		
+		driver.close();
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
